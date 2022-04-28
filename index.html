@@ -136,9 +136,13 @@
       <!-- video for the advertiser 
       if change is needed change the src-->
       <div class = "vid">
-        <video id = "video_id" width="50%" height="auto" autoplay muted>
+        <script src = 'unmute.js'></script>
+        <video id = "video_id" width="50%" height="auto" autoplay muted onclick = 'toggleMute()'>
           <source src = "https://github.com/LolsMeow/Captive-Portal/raw/main/Nissan_Video_Advertising.mp4" type="video/mp4">
-      </video>
+        </video>
+        <div id = 'video_sound'>
+          Tap Video for Sound
+        </div>
       </div>
 
       <br>
