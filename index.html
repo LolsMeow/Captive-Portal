@@ -2,16 +2,34 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Captive Portal</title>
 <style>
-.main{
-    text-align: center;
-    vertical-align: middle;
+* {
+  box-sizing: border-box;
 }
+
 .logo{
-    width: 30%;
-    height: 30%;
+  text-align: center;
 }
+
+#logo_image{
+  width: 30%;
+}
+
+.vid{
+  text-align: center;
+}
+
+.countdown_text{
+  text-align: center;
+}
+
+.slice_logo{
+  text-align: center;
+  position: relative;
+}
+
 #some-button {
   background-color: #111827;
   border: 1px solid transparent;
@@ -60,9 +78,47 @@
     background: #111827;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px; 
+    padding-top: 3px;
+    padding-bottom: 3px; 
     font-size: 2rem;
+}
+
+
+#power_by{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: x-large;
+}
+
+@media only screen and (max-width: 1000px) {
+  #logo_image{
+    width: 60%;
+  }
+  #video_id{
+    width: 100%;
+    height: auto;
+  }
+  #slice{
+    width: 30%;
+  }
+  #power_by{
+  font-size:small;
+}
+}
+
+@media only screen and (max-width: 600px) {
+  #logo_image{
+    width: 100%;
+  }
+  #video_id{
+    width: 100%;
+    height: auto;
+  }
+  #slice{
+    width: 30%;
+  }
+  #power_by{
+  font-size:small;
+}
 }
 
 </style>
@@ -71,29 +127,43 @@
 
 <body>
     <div class = "main">
+      <!-- logo for the client 
+      if change is needed change the src -->
+      <div class = "logo">
+        <img id = "logo_image" src = "APBroadwalk.png">
+      </div>
 
-        <img class = "logo" src = "APBroadwalk.png">
-        <br>
+      <!-- video for the advertiser 
+      if change is needed change the src-->
+      <div class = "vid">
+        <video id = "video_id" width="50%" height="auto" autoplay muted>
+          <source src = "Nissan_Video_Advertising.mp4" type="video/mp4">
+      </video>
+      </div>
 
-        <video width="850" height="450" autoplay muted>
-            <source src = "Nissan_Video_Advertising.mp4" type="video/mp4">
-        </video>
-
-        <br>
-        <br>
-
+      <br>
+      <!-- hidden connect button plus countdown text -->
+      <!-- to change timer count
+      change the variable count in the timer.js file -->
+      <div class = "countdown_text">
         <div id = "some-text">Proceed in 
-        <span id="timer"></span>
-        <script src = "timer.js"></script>
+          <span id="timer"></span>
+          <script src = "timer.js"></script>
         </div>
-        <script src = "text_disappear.js"></script>
+          <script src = "text_disappear.js"></script>
+          <button id="some-button">Connect</button>
+          <script src = "button_show.js"></script>
+      </div>
 
-        <br>
-
-        <button id="some-button">Connect</button>
-        <script src = "button_show.js"></script>
-
+      <br>
+      <div class = "wrapper">
+        <!-- slice logo -->
+      <div class = "slice_logo">
+        <span id = 'power_by'> POWERED BY: </span>
+        <img id = "slice" width="10%" height="auto" src = "Slice-Logo.gif">
+      </div>
+      </div>
+      
     </div>
 </body>
-
 </html>
