@@ -136,22 +136,13 @@
       <!-- video for the advertiser 
       if change is needed change the src-->
       <div class = "vid">
-        <!-- Revive Adserver Hosted edition Javascript Tag - Generated with Revive Adserver v5.3.1 -->
-<script type='text/javascript'><!--//<![CDATA[
-  var m3_u = (location.protocol=='https:'?'https://servedby.revive-adserver.net/ajs.php':'http://servedby.revive-adserver.net/ajs.php');
-  var m3_r = Math.floor(Math.random()*99999999999);
-  if (!document.MAX_used) document.MAX_used = ',';
-  document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-  document.write ("?zoneid=12780");
-  document.write ('&amp;cb=' + m3_r);
-  if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-  document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-  document.write ("&amp;loc=" + escape(window.location));
-  if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-  if (document.context) document.write ("&context=" + escape(document.context));
-  document.write ("'><\/scr"+"ipt>");
-//]]>--></script><noscript><a href='http://servedby.revive-adserver.net/ck.php?n=abb4d5b5&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://servedby.revive-adserver.net/avw.php?zoneid=12780&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=abb4d5b5' border='0' alt='' /></a></noscript>
-
+        <script src = 'unmute.js'></script>
+        <video id = "video_id" width="50%" height="auto" autoplay muted onclick = 'toggleMute()'>
+          <source src = "https://github.com/LolsMeow/Captive-Portal/raw/main/Nissan_Video_Advertising.mp4" type="video/mp4">
+        </video>
+        <div id = 'video_sound'>
+          Tap Video for Sound
+        </div>
       </div>
 
       <br>
@@ -159,7 +150,13 @@
       <!-- to change timer count
       change the variable count in the timer.js file -->
       <div class = "countdown_text">
+        <div id = "some-text">Free Wi-Fi in
+          <span id="timer"></span>
+          <script src = "timer.js"></script>
+        </div>
+          <script src = "text_disappear.js"></script>
           <button id="some-button">Connect</button>
+          <script src = "button_show.js"></script>
       </div>
 
       <br>
